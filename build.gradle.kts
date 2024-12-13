@@ -22,6 +22,7 @@ dependencies {
     implementation ("org.springframework.retry:spring-retry")
     implementation ("org.springframework.boot:spring-boot-starter-actuator")
     implementation ("org.springframework.boot:spring-boot-starter-data-jdbc")
+    implementation ("org.flywaydb:flyway-core:9.22.3")
 
     runtimeOnly("org.postgresql:postgresql")
 
