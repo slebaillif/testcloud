@@ -1,13 +1,22 @@
 package org.example;
 
+import org.example.service.PolarProperties;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class HomeController {
 
+    private final PolarProperties polarProperties;
+
+    public HomeController(PolarProperties polarProperties) {
+        this.polarProperties = polarProperties;
+    }
+
     @GetMapping("/")
     public String greeting() {
-        return "Welcome yo man! Lucas is the best!";
+        return polarProperties.getGreetings();
     }
+
+
 }
