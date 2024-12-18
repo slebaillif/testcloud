@@ -1,3 +1,5 @@
+import org.springframework.boot.gradle.tasks.bundling.BootBuildImage
+
 plugins {
     id("java")
     id("org.springframework.boot") version "3.4.0"
@@ -42,4 +44,9 @@ dependencyManagement {
 
 tasks.test {
     useJUnitPlatform()
+}
+
+tasks.named<BootBuildImage>("bootBuildImage") {
+    imageName.set("catalog-service")
+    environment.put("BP_JVM_VERSION",  "17.*")
 }
